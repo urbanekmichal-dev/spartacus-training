@@ -14,6 +14,7 @@ import { OrderFeatureModule } from './features/order/order-feature.module';
 import { CheckoutFeatureModule } from './features/checkout/checkout-feature.module';
 import { AsmFeatureModule } from './features/asm/asm-feature.module';
 import { ExerciseCmscomponentsModule } from './features/exercise-cmscomponents/exercise-cmscomponents.module';
+import { ExerciseStaticCmsModule } from './features/exercise-static-cms/exercise-static-cms.module';
 
 @NgModule({
   declarations: [],
@@ -93,8 +94,10 @@ import { ExerciseCmscomponentsModule } from './features/exercise-cmscomponents/e
     OrderFeatureModule,
     CheckoutFeatureModule,
     AsmFeatureModule,
-    // Exercise custom CMS
+    // Exercise Create a Custom Angular Component
     ExerciseCmscomponentsModule,
+    //Exercise Build a Static CMS Page Structure
+    ExerciseStaticCmsModule,
   ]
 })
 export class SpartacusFeaturesModule { }
