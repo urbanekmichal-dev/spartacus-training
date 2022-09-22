@@ -15,6 +15,7 @@ import { CheckoutFeatureModule } from './features/checkout/checkout-feature.modu
 import { AsmFeatureModule } from './features/asm/asm-feature.module';
 import { ExerciseCmscomponentsModule } from './features/exercise-cmscomponents/exercise-cmscomponents.module';
 import { ExerciseStaticCmsModule } from './features/exercise-static-cms/exercise-static-cms.module';
+import { CustomRoutingModule } from './features/custom-routing/custom-routing.module';
 
 @NgModule({
   declarations: [],
@@ -98,6 +99,8 @@ import { ExerciseStaticCmsModule } from './features/exercise-static-cms/exercise
     ExerciseCmscomponentsModule,
     //Exercise Build a Static CMS Page Structure
     ExerciseStaticCmsModule,
+    //Exercise Create Custom Static Routes
+    CustomRoutingModule,
   ]
 })
 export class SpartacusFeaturesModule { }
