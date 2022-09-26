@@ -1,0 +1,5 @@
+{
+    "customFeature": {
+        "example": "my custom message contains parameters: {{param1}} and {{param2}}"
+    }   
+}

@@ -1,0 +1,9 @@
+<ng-template cxOutletRef="Section1">
+    <input placeholder="{{'searchBox.placeholder' | cxTranslate}}"/>
+    <p *ngIf="cart$ |async as cart">
+        <cx-icon type="CART"></cx-icon>
+        {{'miniCart.item' | cxTranslate : {count: cart.deliveryItemsQuantity} }}
+        <br>Cart {{componentMessage$ | async}}
+        <br>As of {{today | cxDate: 'longDate'}} {{today | cxDate: 'mediumTime'}}
+    </p>
+</ng-template>

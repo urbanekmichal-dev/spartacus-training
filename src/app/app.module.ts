@@ -11,6 +11,7 @@ import { GlobalConfigModule } from "./spartacus/features/global-config/global-co
 import { Theme } from "./spartacus/features/global-config/config/theme-config";
 import { Config, ConfigModule } from "@spartacus/core";
 import { CustomLayoutModule } from "./spartacus/features/custom-layout/custom-layout.module";
+import { ExerciseTranslationsModule } from "./spartacus/features/exercise-translations/exercise-translations.module";
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { CustomLayoutModule } from "./spartacus/features/custom-layout/custom-la
       theme: Theme.ICECREAM
     }),
     // CustomLayoutModule
+    ExerciseTranslationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
