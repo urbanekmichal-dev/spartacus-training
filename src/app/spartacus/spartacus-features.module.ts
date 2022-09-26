@@ -17,6 +17,7 @@ import { ExerciseCmscomponentsModule } from './features/exercise-cmscomponents/e
 import { ExerciseStaticCmsModule } from './features/exercise-static-cms/exercise-static-cms.module';
 import { CustomRoutingModule } from './features/custom-routing/custom-routing.module';
 import { ExerciseServicesModule } from './features/exercise-services/exercise-services.module';
+import { ExerciseSeoModule } from './features/exercise-seo/exercise-seo.module';
 
 @NgModule({
   declarations: [],
@@ -103,6 +104,7 @@ import { ExerciseServicesModule } from './features/exercise-services/exercise-se
     //Exercise Create Custom Static Routes
     CustomRoutingModule,
     ExerciseServicesModule,
+    ExerciseSeoModule,
   ]
 })
 export class SpartacusFeaturesModule { }
