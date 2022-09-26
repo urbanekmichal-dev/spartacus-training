@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { PageMetaResolver } from '@spartacus/core';
+import { ContentPageMetaResolver, PageMetaResolver } from '@spartacus/core';
 import { LoginPageMetaResolver } from './login-page-meta-resolver';
+import { CustomContentPageMetaResolver } from './custom-content-page-meta.resolver';
 
 
 
@@ -11,10 +12,14 @@ import { LoginPageMetaResolver } from './login-page-meta-resolver';
     CommonModule
   ],
   providers: [
+    // {
+    //   provide: PageMetaResolver,
+    //   useClass: LoginPageMetaResolver,
+    //   multi: true
+    // }
     {
-      provide: PageMetaResolver,
-      useClass: LoginPageMetaResolver,
-      multi: true
+      provide: ContentPageMetaResolver,
+      useClass: CustomContentPageMetaResolver
     }
   ]
 })

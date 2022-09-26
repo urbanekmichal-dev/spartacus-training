@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { translationChunksConfig, translations } from "@spartacus/assets";
-import { FeaturesConfig, I18nConfig, OccConfig, provideConfig, SiteContextConfig } from "@spartacus/core";
+import { FeaturesConfig, I18nConfig, OccConfig, PageMetaConfig, provideConfig, SiteContextConfig } from "@spartacus/core";
 import { defaultCmsContentProviders, layoutConfig, mediaConfig } from "@spartacus/storefront";
 
 
@@ -45,14 +45,56 @@ export const translationOverwrites = {
       fallbackLang: 'en'
     },
   }),
-  provideConfig(<I18nConfig>{ 
+  provideConfig(<I18nConfig>{
     i18n: {
-      resources: translationOverwrites, 
-      },
-    }),
+      resources: translationOverwrites,
+    },
+  }),
   provideConfig(<FeaturesConfig>{
     features: {
       level: '4.3'
+    }
+  }),
+  provideConfig(<PageMetaConfig>{
+    pageMeta: {
+      resolvers: [
+        {
+          property: 'title',
+          method: 'resolveTitle'
+        },
+        {
+          property: 'heading',
+          method: 'resolveHeading'
+        },
+        {
+          property: 'breadcrumbs',
+          method: 'resolveBreadcrumbs'
+        },
+        {
+          property: 'description',
+          method: 'resolveDescription',
+          disabledInCsr: false,
+        },
+        {
+          property: 'title',
+          method: 'resolveTitle'
+        },
+        {
+          property: 'image',
+          method: 'resolveImage',
+          disabledInCsr: true
+        },
+        {
+          property: 'robots',
+          method: 'resolresolveRobotsveImage',
+          disabledInCsr: false,
+        },
+        {
+          property: 'canonicalUrl',
+          method: 'resolveCanonicalUrl',
+          disabledInCsr: true
+        },
+      ]
     }
   })]
 })
