@@ -3,6 +3,24 @@ import { translationChunksConfig, translations } from "@spartacus/assets";
 import { FeaturesConfig, I18nConfig, OccConfig, provideConfig, SiteContextConfig } from "@spartacus/core";
 import { defaultCmsContentProviders, layoutConfig, mediaConfig } from "@spartacus/storefront";
 
+
+export const translationOverwrites = {
+  en: {
+    common: {
+      searchBox: {
+        placeholder: "You can search here...",
+      }
+    }
+  },
+  de: {
+    common: {
+      searchBox: {
+        placeholder: "Sie können hier suchen ...",
+      }
+    }
+  },
+};
+
 @NgModule({
   declarations: [],
   imports: [
@@ -19,13 +37,20 @@ import { defaultCmsContentProviders, layoutConfig, mediaConfig } from "@spartacu
       language: ['en', 'de', 'ja', 'zh'],
       baseSite: ['electronics-spa'],
     },
-  }), provideConfig(<I18nConfig>{
+  }),
+  provideConfig(<I18nConfig>{
     i18n: {
       resources: translations,
       chunks: translationChunksConfig,
       fallbackLang: 'en'
     },
-  }), provideConfig(<FeaturesConfig>{
+  }),
+  provideConfig(<I18nConfig>{ 
+    i18n: {
+      resources: translationOverwrites, 
+      },
+    }),
+  provideConfig(<FeaturesConfig>{
     features: {
       level: '4.3'
     }
